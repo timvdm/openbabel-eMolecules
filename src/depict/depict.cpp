@@ -461,6 +461,11 @@ namespace OpenBabel
         else
           atomSymbol = etab.GetSymbol(atom->GetAtomicNum());
 
+        if(atom->HasData(AliasDataType)) {
+          AliasData* ad = static_cast<AliasData*>(atom->GetData(AliasDataType));
+          atomSymbol = ad->GetAlias().c_str();
+        }
+ 
         unsigned int hCount = atom->ImplicitHydrogenCount();
         // rightAligned:  
         //   false  CH3

@@ -16,6 +16,7 @@ else(MINIMAL_BUILD)
         obprop
         obrotamer
         obrotate
+        obrgroup
   )
 endif(MINIMAL_BUILD)
 
